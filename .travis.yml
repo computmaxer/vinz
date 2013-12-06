@@ -4,8 +4,9 @@ install: pip install -r app/requirements.txt
 services: mongodb
 before_script:
   - 'npm install -g bower grunt-cli'
-  - 'npm install grunt-cli'
   - 'bower install'
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
 script:
   - 'nosetests -v'
   - './run_grunt_tests.sh'

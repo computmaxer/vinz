@@ -2,4 +2,9 @@ language: python
 python: "2.7"
 install: pip install -r app/requirements.txt
 services: mongodb
-script: nosetests -v
+before_script:
+  - 'npm install -g bower grunt-cli'
+  - 'bower install'
+script:
+  - 'nosetests -v'
+  - 'grunt test'

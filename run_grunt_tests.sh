@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd frontend
-grunt test
+npm test
